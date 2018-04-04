@@ -4,8 +4,6 @@ public class JIDE
     {
         Process.build();
         Thread.sleep(1000);
-        Func.closeTml();
-        Thread.sleep(1000);
         Func.resetJVM();
     }
 }
