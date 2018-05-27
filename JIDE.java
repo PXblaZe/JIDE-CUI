@@ -25,7 +25,6 @@ public class JIDE
             System.out.println("''Invalid Input''");
         if(log==true)
         {
-            System.out.println();
             Process.build();
             Thread.sleep(1000);
             Func.closeTml();
