@@ -14,7 +14,7 @@ class IOsis
   }
   
   protected static void outsisAdd(String text, String fileName) {
-    try { String[] in = insis(fileName);
+    try { String[] in = insisar(fileName);
       long pl = in.length;
       PrintWriter out = new PrintWriter(fileName);
       for (int i = 0; i < pl; i++)
@@ -25,7 +25,7 @@ class IOsis
     }
   }
   
-  protected static String[] insis(String fileName) { 
+  protected static String[] insisar(String fileName) { 
     java.util.ArrayList<String> lines = new java.util.ArrayList();
     try
     {
@@ -36,6 +36,18 @@ class IOsis
     } catch (java.io.IOException e) { System.out.println("Error: " + e); }
     String[] linesArray = (String[])lines.toArray(new String[lines.size()]);
     return linesArray;
+  }
+  
+  protected static String insis(String fileName) {
+      String pr=null;
+    try
+    {
+      java.io.BufferedReader in = new java.io.BufferedReader(new java.io.FileReader(fileName));
+      String str = null;
+      if((str = in.readLine()) != null)
+          pr=str;
+    } catch (java.io.IOException e) { System.out.println("Error: " + e); }
+    return pr;
   }
   
   protected static void outsis(String[] text, String fileName) 
